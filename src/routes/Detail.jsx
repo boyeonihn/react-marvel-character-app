@@ -26,6 +26,7 @@ const Detail = () => {
       {isLoading && <h3>Loading... </h3>}
       {!isLoading && (
         <CharacterDetail
+          key={character.id}
           name={character.name}
           url={character.urls.find((url) => url.type === 'comiclink')}
           series={character.series.items}
