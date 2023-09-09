@@ -15,16 +15,10 @@ export const useFavorites = () => {
     [favorites, setFavorites]
   );
 
-  // const toggleTheme = () => {
-  //   setTheme((current) => (current === 'light' ? 'dark' : 'light'));
-  // };
-
   const bringLocalData = () => {
     if ('marvel-favorites' in localStorage) {
       const json = JSON.parse(localStorage.getItem('marvel-favorites'));
-      console.log('bringing localstorage', { json });
       setFavorites(json);
-      console.log('there was data and we brought it!');
     }
     setBrought(true);
   };
@@ -32,11 +26,9 @@ export const useFavorites = () => {
   const saveLocalData = () => {
     const json = JSON.stringify(favorites);
     localStorage.setItem('marvel-favorites', json);
-    console.log('save local', { favorites });
   };
 
   useEffect(() => {
-    console.log('# bringing data...');
     bringLocalData();
   }, []);
 
