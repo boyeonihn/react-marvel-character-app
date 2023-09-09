@@ -1,4 +1,4 @@
-import Character from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -40,7 +40,7 @@ export const Character = ({ name, series, coverImage, id, onClick }) => {
 Character.propTypes = {
   id: PropTypes.number.isRequired,
   coverImage: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
   genres: PropTypes.arrayOf(PropTypes.string),
 };
