@@ -23,9 +23,12 @@ const CharacterDetail = ({ name, coverImage, description, url, series }) => {
         <h3 className="font-bold text-xl">
           Appearances in the Following Series:
         </h3>
-        <ul className="">
+        <ul>
           {series.map((item) => (
-            <li className="text-xl list-disc list-inside hover:text-white hover:font-bold">
+            <li
+              key={item.name}
+              className="text-xl list-disc list-inside hover:text-white hover:font-bold"
+            >
               {item.name}
             </li>
           ))}
