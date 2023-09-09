@@ -17,10 +17,17 @@ export const Character = ({ name, id, onClick, coverImage }) => {
   return (
     <section className="flex flex-col">
       <div className="h-3/5">
-        <img src={coverImage} className="w-full h-full object-cover" />
+        <Link to={`/character/${id}`}>
+          <img
+            src={coverImage}
+            className="w-full h-full object-cover"
+            alt={name}
+          />
+        </Link>
       </div>
-      <div className="bg-neutral-950 h-2/5 border-t-8 border-red-600 hover:bg-red-600">
-        <h2 className="text-white-100 pt-6">
+
+      <div className="bg-neutral-950 h-2/5 border-t-8 border-red-600 hover:bg-red-600 flex items-center">
+        <h2 className="text-white-100 p-6 text-lg">
           <Link
             className="uppercase font-bold text-m decoration-white"
             to={`/character/${id}`}
