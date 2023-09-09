@@ -21,6 +21,18 @@ const Detail = () => {
     getCharacter();
   }, []);
 
+  return (
+    <div>
+      {isLoading && <h3>Loading... </h3>}
+      {!isLoading && (
+        <CharacterDetail
+          name={character.name}
+          description={character.description}
+          coverImage={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+        />
+      )}
+    </div>
+  );
 };
 
 export default Detail;
