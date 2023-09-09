@@ -27,6 +27,8 @@ const Detail = () => {
       {!isLoading && (
         <CharacterDetail
           name={character.name}
+          url={character.urls.find((url) => url.type === 'comiclink')}
+          series={character.series.items}
           description={character.description}
           coverImage={`${character.thumbnail.path}.${character.thumbnail.extension}`}
         />
