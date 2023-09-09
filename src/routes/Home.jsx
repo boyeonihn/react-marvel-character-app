@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="grid gap-4 grid-cols-4">
+    <main className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {!isLoading &&
         data.map((character) => (
           <Character
