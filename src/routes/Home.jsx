@@ -21,6 +21,20 @@ const Home = () => {
     getCharacters();
   }, []);
 
+  return (
+    <main className="grid gap-4 grid-cols-4">
+      {!isLoading &&
+        data.map((character) => (
+          <Character
+            key={character.id}
+            id={character.id}
+            name={character.name}
+            description={character.description}
+            coverImage={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+          />
+        ))}
+    </main>
+  );
 };
 
 export default Home;
