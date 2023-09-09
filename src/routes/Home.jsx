@@ -10,10 +10,8 @@ const Home = () => {
       'https://marvel-proxy.nomadcoders.workers.dev/v1/public/characters?limit=50&orderBy=modified&series=24229,1058,2023'
     );
     const json = await response.json();
-    console.log(json.data.results);
 
     setData(json.data.results);
-
     setIsLoading(false);
   };
 
@@ -29,7 +27,6 @@ const Home = () => {
             key={character.id}
             id={character.id}
             name={character.name}
-            description={character.description}
             coverImage={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           />
         ))}
