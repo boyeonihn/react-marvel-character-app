@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FavoriteListContext } from '../App';
 
 export const Character = ({ name, id, onClick, coverImage }) => {
   coverImage =
@@ -9,6 +11,8 @@ export const Character = ({ name, id, onClick, coverImage }) => {
     'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
       ? coverImage
       : 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1200px-Marvel_Logo.svg.png';
+
+  const { toggleFavorite } = useContext(FavoriteListContext);
 
   return (
     <section className="flex flex-col">
@@ -24,7 +28,12 @@ export const Character = ({ name, id, onClick, coverImage }) => {
             {name}
           </Link>
         </h2>
-        <span onClick={onClick}>
+        <span
+          className="hover:cursor-pointer"
+          onClick={() => {
+            toggleFavorite({ name, id, coverImage });
+          }}
+        >
           <FontAwesomeIcon icon={faHeart} />
         </span>
       </div>
