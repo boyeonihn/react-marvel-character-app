@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
+import Home from './routes/Home.jsx';
+import Detail from './routes/Detail.jsx';
+
 import './index.css';
 
 const router = createBrowserRouter([
