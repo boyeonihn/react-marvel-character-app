@@ -27,6 +27,24 @@ const FavoriteList = () => {
         ) : (
           ''
         )}
+        {favorites.map((character) => (
+          <li key={character.id} className="flex">
+            <p className="pr-8 w-2/5">{character.name}</p>
+            <span
+              className="hover:cursor-pointer"
+              onClick={() => {
+                toggleFavorite({
+                  name: character.name,
+                  id: character.id,
+                  coverImage: character.coverImage,
+                });
+              }}
+            >
+              <FontAwesomeIcon icon={faHeart} /> Remove Character
+            </span>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 };
